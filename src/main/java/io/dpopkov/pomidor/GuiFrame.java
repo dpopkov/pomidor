@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.TimerTask;
 
@@ -110,8 +111,18 @@ public class GuiFrame extends JFrame {
     }
 
     private void loadWavFile() {
-        String pathToResource = "/sound/wav/" + DEFAULT_WAV_FILENAME;
-        String pathToFile = GuiFrame.class.getResource(pathToResource).getFile();
+        String pathToFile;
+        File currentDirFile = new File(DEFAULT_WAV_FILENAME);
+        if (currentDirFile.exists()) {
+            pathToFile = currentDirFile.getPath();
+        } else {
+            String pathToResource = "/sound/wav/" + DEFAULT_WAV_FILENAME;
+            pathToFile = GuiFrame.class.getResource(pathToResource).getFile();
+            File resourceFile = new File(pathToFile);
+            if (!resourceFile.exists()) {
+                throw new PomidorException("Cannot find sound file " + DEFAULT_WAV_FILENAME);
+            }
+        }
         wavPlayer = new WavPlayer(pathToFile);
         delayInputField.setEnabled(true);
     }
