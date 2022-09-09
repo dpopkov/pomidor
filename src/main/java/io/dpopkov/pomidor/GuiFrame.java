@@ -2,6 +2,8 @@ package io.dpopkov.pomidor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -27,7 +29,10 @@ public class GuiFrame extends JFrame {
         setSize(400, 100);
         setResizable(false);
 
+        GridLayout gridLayout = new GridLayout(3, 4);
+
         var panel = new JPanel();
+        panel.setLayout(gridLayout);
         add(panel);
 
         var playOnceButton = new JButton("Play Test Once");
@@ -40,7 +45,7 @@ public class GuiFrame extends JFrame {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                startPomidorButton.setEnabled(delayInputField.getText().trim().length() != 0);
+                enableStartButton();
             }
         });
         panel.add(delayInputField);
@@ -53,10 +58,39 @@ public class GuiFrame extends JFrame {
         });
         panel.add(startPomidorButton);
 
+        JRadioButton radioButton25m = new JRadioButton("25m");
+        radioButton25m.addActionListener(new DelayInputSetter("25m"));
+        JRadioButton radioButton5m = new JRadioButton("5m");
+        radioButton5m.addActionListener(new DelayInputSetter("5m"));
+        ButtonGroup radioGroup = new ButtonGroup();
+        radioGroup.add(radioButton25m);
+        radioGroup.add(radioButton5m);
+        panel.add(radioButton25m);
+
         countDownLabel = new JLabel();
         panel.add(countDownLabel);
 
+        panel.add(radioButton5m);
+
         loadWavFile();
+    }
+
+    private void enableStartButton() {
+        startPomidorButton.setEnabled(delayInputField.getText().trim().length() != 0);
+    }
+
+    private class DelayInputSetter implements ActionListener {
+        private final String text;
+
+        private DelayInputSetter(String text) {
+            this.text = text;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            delayInputField.setText(text);
+            enableStartButton();
+        }
     }
 
     private void startPlayTimer() {
