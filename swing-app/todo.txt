@@ -1,0 +1,4 @@
+Add field 'title'.
+Save pomodoros (title, duration, start, end) into log file or db-in-file.
+Add menu (File->LogFile, Settings->SetAudioFile, Settings->PlayTestOnce).
+
