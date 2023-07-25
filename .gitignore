@@ -28,3 +28,7 @@ target/
 
 # Sound files
 *.wav
+
+# VS Code
+frontend/.vscode/
+
