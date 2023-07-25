@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --dark: #333;
+  --medium: #777;
+  --light: #ccc;
+  --input-color: rgb(214, 247, 214);
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 1rem;
+}
+
+/* Header */
+
+header {
+  margin-bottom: 30px;
+}
+
+header h1.app-title {
+  text-align: center;
+}
+
+/* Form and Input */
+
+form#timer-form {
+  background-color: var(--input-color);
+  padding: 0.7rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+form#timer-form label {
+  margin-right: 20px;
+}
+
+.main-timeout {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--light);
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: var(--dark);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Pomidor Items */
+
+.pomidors {
+  background-color: rgb(241, 241, 207);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.pomidors h3 {
+  margin-bottom: 10px;
+}
+
+.pomidors li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  border: 1px solid var(--light);
+  border-radius: 5px;
+  margin: 0 0.3rem 0.3rem;
+  padding: 0.2rem 0.3rem;
+}

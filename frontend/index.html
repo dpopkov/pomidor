@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="./script.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Pomidor</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="app-title" class="app-title">Pomidor</h1>
+      </header>
+      <main>
+        <form id="timer-form">
+          <div class="form-control">
+            <input
+              type="text"
+              id="timeout-input"
+              class="form-input"
+              placeholder="Enter timeout (2m30s)"
+            />
+          </div>
+          <div class="timeout-options form-control">
+            <span>
+              <input type="radio" id="45m" name="timeout" />
+              <label for="45m">45m</label>
+            </span>
+            <span class="main-timeout">
+              <input type="radio" id="25m" name="timeout" checked />
+              <label for="25m">25m</label>
+            </span>
+            <span>
+              <input type="radio" id="15m" name="timeout" />
+              <label for="15m">15m</label>
+            </span>
+            <span class="main-timeout">
+              <input type="radio" id="5m" name="timeout" />
+              <label for="5m">5m</label>
+            </span>
+            <span>
+              <input type="radio" id="2m" name="timeout" />
+              <label for="2m">2m</label>
+            </span>
+            <span>
+              <input type="radio" id="1m" name="timeout" />
+              <label for="1m">1m</label>
+            </span>
+          </div>
+          <div class="form-control">
+            <button type="submit" class="btn">Start</button>
+          </div>
+          <div class="form-control">
+            <button class="btn">Pause</button>
+          </div>
+        </form>
+
+        <ul id="pomidors-list" class="pomidors">
+          <h3>History</h3>
+          <li class="pomidor">1230 read 1330 [1:00]</li>
+          <li class="pomidor">1330 write 1430 [1:00]</li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>
