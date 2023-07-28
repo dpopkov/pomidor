@@ -1,0 +1,5 @@
+- Add script playing wav file
+- Event: click on radiobutton
+- Event: click Start
+- Event: click Pause
+- Event: click Stop

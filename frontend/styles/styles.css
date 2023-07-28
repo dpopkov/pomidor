@@ -77,19 +77,28 @@ form#timer-form label {
   border-radius: 5px;
 }
 
-/* Pomidor Items */
+/* History Items */
 
-.pomidors-list {
+.history {
   background-color: rgb(241, 241, 207);
   padding: 10px;
   border-radius: 10px;
 }
 
-.pomidors-list h3 {
+.history h3 {
   margin-bottom: 10px;
 }
 
-.pomidors-list li {
+.history .input-filter {
+  width: 100%;
+  background-color: transparent;
+  padding: 0.4rem;
+  margin-bottom: 0.6rem;
+  border: none;
+  border-bottom: 1px solid var(--light);
+}
+
+.item-list li {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
