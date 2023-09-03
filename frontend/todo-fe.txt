@@ -3,3 +3,14 @@
 - Event: click Start
 - Event: click Pause
 - Event: click Stop
+- Name of pomodoro
+- Select last names of pomodoro
+- Stats (Total today)
+- Filtering by substring
+- Filtering by date
+- Filtering by today
+- Edit history item text
+- Types of pomodoro (Work/Pause/Other)
+- Categories of pomodoro
+- Stats (Total by categories)
+- Complex Items (Project:PomodoroName)
