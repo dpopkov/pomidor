@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: cadetblue;
+  --medium: #777;
+  --light: #ccc;
+  --input-color: rgb(214, 247, 214);
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
